@@ -1,0 +1,18 @@
+<h2>Car information</h2>
+<ul>
+    <li>{{ carInfo.name }}</li>
+    <li>{{ carInfo.mileage }}</li>
+    <li>{{ carInfo.fuelTankCapacity }}</li>
+    <li>{{ carInfo.currentFuelAmount }}</li>
+</ul>
+
+<h3>Car characteristics</h3>
+<ul>
+    <li *ngFor="let characteristic of carInfo.characteristics; let i = index">
+        {{ characteristic }}
+    </li>
+</ul>
+
+<button (click)="driveOnClickHandler($event)">Drive</button>
+
+<button [ngClass]="{hidden: this.carInfo.currentFuelAmount > 0}" (click)="refuelOnClickHandler($event)">Refuel</button>
