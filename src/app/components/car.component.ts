@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./car.component.css']
 })
 export class CarComponent {
-    carInfo = {
+    public carInfo = {
         name: 'Lexus',
         mileage: 20000,
         fuelTankCapacity: 93,
@@ -17,15 +17,15 @@ export class CarComponent {
             'Разгон до 100 км/ч за 7.3с'
         ]
     };
-
-    driveOnClickHandler($event) {
+    // Drive method handler
+    public driveOnClickHandler() {
             this.carInfo.currentFuelAmount -= 10;
             if (this.carInfo.currentFuelAmount > 0) {
                 this.carInfo.mileage += 100;
             }
     }
-
-    refuelOnClickHandler($event) {
+    // Refuel method handler
+    public refuelOnClickHandler($event) {
         this.carInfo.currentFuelAmount = 93;
     }
 }
